@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartPay - Payment</title>
+</head>
+<body>
+    <h2>SmartPay Mock Payment</h2>
+
+    <p><b>Merchant:</b> {{ merchant_name }}</p>
+    <p><b>Order ID:</b> {{ order_id }}</p>
+    <p><b>Amount:</b> ₹{{ amount }} {{ currency }}</p>
+
+    <form method="post" action="/payments/confirm">
+        <input type="hidden" name="order_id" value="{{ order_id }}">
+
+        <label>Payment Mode:</label>
+        <select name="mode">
+            <option value="CARD">Card</option>
+            <option value="UPI">UPI</option>
+        </select>
+        <br><br>
+
+        <button name="result" value="SUCCESS" type="submit">Simulate Success</button>
+        <button name="result" value="FAILED" type="submit">Simulate Failure</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartPay - Dashboard</title>
+</head>
+<body>
+    <h2>SmartPay Merchant Dashboard</h2>
+
+    <p><b>Merchant:</b> {{ merchant.name }} ({{ merchant.email }})</p>
+
+    <h3>Recent Orders</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>Order ID</th>
+            <th>Amount</th>
+            <th>Currency</th>
+            <th>Status</th>
+        </tr>
+
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.id }}</td>
+            <td>{{ order.amount }}</td>
+            <td>{{ order.currency }}</td>
+            <td>{{ order.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
